@@ -16,7 +16,7 @@ SELECT
 	value::json->'coef' as coef
 	FROM public.data
 WHERE
-	device_uid = '0035003b3438511438333630'
+	device_uid = '003e00483438511438333630'
 	and code = 32
-    and time_received > '2022-09-09'
+    and time_received > '2022-10-17'
 ORDER BY time_received desc
