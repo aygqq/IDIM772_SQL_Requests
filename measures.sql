@@ -1,5 +1,6 @@
 SELECT 
 	id,
+	device_uid,
 	time_received,
 	"time",
 	value::json->'spo_num' as spo_num,
@@ -13,10 +14,13 @@ SELECT
 	value::json->'len_sub' as len_sub,
 	value::json->'speed_avg' as speed_avg,
 	value::json->'weight' as weight,
-	value::json->'coef' as coef
+	value::json->'coef' as coef,
+	value::json->'idle_imp' as idle_imp,
+	value::json->'meas_err' as meas_err,
+	value
 	FROM public.data
 WHERE
-	device_uid = '003e00483438511438333630'
-	and code = 32
-    and time_received > '2022-10-17'
+	code = 32
+-- 	and device_uid = '0035003b3438511438333630'
+    and time_received > '2022-11-01'
 ORDER BY time_received desc
